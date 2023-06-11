@@ -39,9 +39,9 @@ contract TestOptimisticISM {
 
         // Deliver a message
         bytes memory message = abi.encode("Hello, World!");
-        bool success = optimisticISM.deliverMessage(message);
+        bool success = optimisticISM.triggerMessageDelivery(message);
 
-        // Verify that the message was delivered successfully
-        Assert.isTrue(success, "Message delivery should succeed");
+        // trigger process that the message was started successfully
+        Assert.isTrue(success, "Message delivery trigger should succeed");
     }
 }
