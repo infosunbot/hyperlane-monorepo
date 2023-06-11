@@ -86,7 +86,7 @@ abstract contract OptimisticISM is IOptimisticIsm {
     }
 
       /**
-     * @notice Rest of delivery related implementation if there are non-implemented use-cases
+     * @notice It will be auto-triggered once verify function works flawless and return true, Rest of delivery related implementation if there are non-implemented use-cases
      * @return True if the rest of delivery implementations work well
      */
     function completeDeliveryProcess() internal pure returns (bool) {
@@ -149,6 +149,7 @@ abstract contract OptimisticISM is IOptimisticIsm {
             return false;
         }
 
+        //continue the delivery process
         completeDeliveryProcess();
 
         return true;
